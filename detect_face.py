@@ -9,7 +9,7 @@ class Detect():
     FACE_CASCADE = cv2.CascadeClassifier(CASCADE)
     i = 0
     output_folder = ""
-    #complete_path = glob.glob('Network/train_data/amit_original/*.jpg')
+    complete_path = glob.glob('Network/train_data/amit_original/*.jpg')
     #total_images =  
 
     def detect_faces(this, image_new, output_folder):
@@ -34,11 +34,11 @@ class Detect():
                 pass
             os.chdir("../")
 
-            #cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 0), 2)
+            cv2.rectangle(image, (x, y), (x + w, y + h), (255, 0, 0), 5)
 
-        # cv2.imshow("Faces Found", image)
-        # if (cv2.waitKey(0) & 0xFF == ord('q')) or (cv2.waitKey(0) & 0xFF == ord('Q')):
-        #     cv2.destroyAllWindows()
+        cv2.imshow("Faces Found", image)
+        if (cv2.waitKey(0) & 0xFF == ord('q')) or (cv2.waitKey(0) & 0xFF == ord('Q')):
+            cv2.destroyAllWindows()
 
     def __init__(self, input_images, output_folder):
 
