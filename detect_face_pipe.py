@@ -8,8 +8,7 @@ Created on Tue Jul 10 16:48:54 2018
 
 import cv2
 import numpy as np
-import os
-import glob
+
 
 class Detect():
     CASCADE = "Face_cascade.xml"
@@ -20,6 +19,7 @@ class Detect():
     
     def detect_faces(this, image_new):
         image = image_new
+        cv2.imshow("image",image)
         #print(1)
         image_grey = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         
@@ -66,8 +66,5 @@ class Detect():
             self.unique_vector.append(one)
             
         self.unique_vector = np.asarray(self.unique_vector)
-        
-    # def ret_unique_vec(self):
-    #     return self.unique_vector
 
 #obj = Detect(input_images, "non_amit_train1")

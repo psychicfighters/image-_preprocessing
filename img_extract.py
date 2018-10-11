@@ -19,7 +19,7 @@ global global_image
 counter = 1
 video_list_input = glob.glob('dem_vid.mp4')
 
-path = "C:/Users/ANIRBAN/Desktop/new video/output"
+path = "C:/Users/AMIT/Desktop/image-_preprocessing"
 
 
 for i in video_list_input:
