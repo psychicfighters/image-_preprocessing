@@ -20,7 +20,7 @@ class Detect():
     def detect_faces(this, image_new):
         image = image_new
         cv2.imshow("image",image)
-        #print(1)
+        print(1)
         image_grey = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         
         faces = this.FACE_CASCADE.detectMultiScale(image_grey, scaleFactor=1.16, minNeighbors=5, minSize=(75,75),
@@ -37,7 +37,7 @@ class Detect():
                 sub_img = cv2.resize(sub_img, (224, 224))
                 this.global_face = sub_img
                 
-                #cv2.imwrite(str(this.i) + ".jpg", sub_img)
+                cv2.imwrite(str(this.i) + ".jpg", sub_img)
             except:
                 print("error")
             finally:
@@ -47,7 +47,7 @@ class Detect():
          #return this.global_face   
             #cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 0), 2)
 
-        # cv2.imshow("Faces Found", image)
+        cv2.imshow("Faces Found", image)
         # if (cv2.waitKey(0) & 0xFF == ord('q')) or (cv2.waitKey(0) & 0xFF == ord('Q')):
         #     cv2.destroyAllWindows()
         return this.global_face

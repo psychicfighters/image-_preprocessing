@@ -10,11 +10,11 @@ class Detect():
     i = 0
     output_folder = ""
     complete_path = glob.glob('Network/train_data/amit_original/*.jpg')
-    #total_images =  
+    total_images = ""
 
     def detect_faces(this, image_new, output_folder):
         image = image_new
-        #print(1)
+        print(1)
         image_grey = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         faces = this.FACE_CASCADE.detectMultiScale(image_grey, scaleFactor=1.16, minNeighbors=15, minSize=(80, 95),
                                                    flags=0)
@@ -43,12 +43,12 @@ class Detect():
     def __init__(self, input_images, output_folder):
 
         self.complete_images = input_images
-        #self.complete_path = glob.glob(self.complete_path)
+        self.complete_path = glob.glob(self.complete_path)
         self.output_folder = output_folder
         self.no_of_images = input_images.shape[0]
-        #print(self.no_of_images)
+        print(self.no_of_images)
         for counter in range(0, self.no_of_images):
-            #print(self.complete_images[counter])
+            print(self.complete_images[counter])
             self.detect_faces(self.complete_images[counter], self.output_folder)
 
 
